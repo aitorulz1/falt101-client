@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { crearNuevoFlat } from "../../actions/flatActions";
 
-export default function NuevoFlat() {
+export default function NuevoFlat({ history }) {
   const [flat, setFlat] = useState({
     name: "",
     flatPicture: "",
@@ -11,9 +11,11 @@ export default function NuevoFlat() {
 
   const { name, flatPicture, price } = flat;
 
+  const [error, setError] = useState(false);
+
   const dispatch = useDispatch();
 
-  const agregarFlat = (producto) => dispatch(crearNuevoFlat(producto));
+  const agregarFlat = (newflat) => dispatch(crearNuevoFlat(newflat));
 
   const onChange = (e) => {
     const { name, value, files } = e.target;
@@ -27,20 +29,45 @@ export default function NuevoFlat() {
     e.preventDefault();
 
     if (name.trim() === "") {
-      console.log("Mal");
+      setError(true);
     }
 
-    agregarFlat({
-      name,
-      flatPicture,
-      price,
-    });
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+
+    const data = new FormData();
+    data.append("file", flat.flatPicture);
+    data.append("upload_preset", "portfolio-aitor");
+    data.append("cloud_name", "aitorcloud");
+    fetch("https://api.cloudinary.com/v1_1/aitorcloud/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then((file) => {
+        // console.log(file.secure_url);
+        // console.log(file);
+
+        agregarFlat({
+          name,
+          flatPicture: file.secure_url,
+          price,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     setFlat({
       name: "",
       flatPicture: "",
       price: 0,
     });
+  };
+
+  const goto = () => {
+    history.push("/flats");
   };
 
   return (
@@ -79,8 +106,12 @@ export default function NuevoFlat() {
           />
         </div>
 
-        <input className="" type="submit" value="Enviar" />
+        <button type="submit" onClick={goto}>
+          Enviar
+        </button>
+        {/* <input className="" type="submit" value="Enviar" /> */}
       </form>
+      {error ? <p className="">Debe de completar todos los campos</p> : null}
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.search-container {
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  float: right;
+  border-left: 1px solid #f7f7f7;
+}
+
+.search {
+  padding-top: Calc(50% - 25px);
+}
+
+.search svg {
+  color: #636363;
+  width: 25px;
+  height: 25px;
+}

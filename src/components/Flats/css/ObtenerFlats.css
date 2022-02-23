@@ -1,0 +1,31 @@
+.obtener-container {
+  position: relative;
+  width: 100%;
+  min-height: Calc(100vh - 75px);
+}
+
+.obtener-content {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.empty-container {
+  text-align: center;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Flat";
+  font-size: 30px;
+}
+
+.empty-container img {
+  width: 100px;
+}
+
+ul.flat-container {
+  position: relative;
+  width: 100%;
+}

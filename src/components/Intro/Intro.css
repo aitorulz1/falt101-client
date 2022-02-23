@@ -1,0 +1,63 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: #9d9d9d;
+}
+
+.home-content {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 25px 0 5%;
+  text-align: center;
+}
+
+.home-content img {
+  width: 125px;
+}
+
+.welcome {
+  margin: auto;
+  padding: 0.5% 0% 0.5%;
+  width: 50%;
+}
+
+.welcome p {
+  padding-top: 2.5%;
+  line-height: 1.5;
+}
+
+.welcome img {
+  width: 75px;
+}
+
+.bathElements {
+  font-size: 42px;
+  color: #fff;
+  font-family: "Flat";
+  margin-bottom: 7.5%;
+}
+
+.button {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  width: 150px;
+  margin: auto;
+  padding: 10px 0px;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+.button:hover {
+  color: #000;
+  background-color: #fff;
+  width: 250px;
+  transition-duration: 1s;
+  border-bottom: 1px solid rgb(158, 158, 158);
+}
+
+@media screen and (max-width: 460px) {
+}

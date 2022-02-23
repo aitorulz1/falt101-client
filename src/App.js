@@ -1,4 +1,5 @@
-import Header from "./components/Header/Header";
+import React from 'react';
+import Home from "./components/Intro/Intro";
 import Form from "./components/Flats/NuevoFlat";
 import Flats from "./components/Flats/ObtenerFlats";
 import Register from "./components/User/Register";
@@ -12,8 +13,8 @@ function App() {
     <div className="">
       <Router>
         <Provider store={store}>
-          <Header />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/form" element={<Form />} />
             <Route path="/flats" element={<Flats />} />
             <Route path="/register" element={<Register />} />

@@ -7,7 +7,7 @@ import "./css/NuevoFlat.css";
 import Logo from "../../assets/logo.png";
 import Bath from "../../assets/bath.jpg";
 
-export default function NuevoFlat() {
+export default function NuevoFlat(props) {
   const [flat, setFlat] = useState({
     name: "",
     flatPicture: "",
@@ -15,13 +15,13 @@ export default function NuevoFlat() {
     type: "",
   });
 
+   console.log(props)
+
   const { name, price, type } = flat;
 
   const [types, getTypes] = useState([]);
 
   const [error, setError] = useState(false);
-
-  const [exito, setExito] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -53,11 +53,14 @@ export default function NuevoFlat() {
 
     if (name.trim() === "") {
       setError(true);
+      return;
     }
 
     setTimeout(() => {
       setError(false);
     }, 3000);
+
+  
 
     const data = new FormData();
     data.append("file", flat.flatPicture);
@@ -88,11 +91,7 @@ export default function NuevoFlat() {
       price: 0,
     });
 
-    setExito(true);
-
-    setTimeout(() => {
-      setExito(false);
-    }, 3000);
+      props.history.push("/");
   };
 
   return (
@@ -145,10 +144,7 @@ export default function NuevoFlat() {
           </form>
           {error ? (
             <p className="alert">Debe de completar todos los campos</p>
-          ) : null}
-          {exito ? (
-            <p className="success">Your product its been uploaded</p>
-          ) : null}
+          ) : null}          
         </div>
       </div>
     </Fragment>

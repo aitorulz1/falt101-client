@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   top: 50%;
-  left: 43%;
+  left: Calc(43% + 50px);
   transform: translate(-0%, -50%);
 }
 
@@ -10,4 +10,10 @@
   text-decoration: none;
   color: #232323;
   padding-left: 15px;
+}
+
+@media screen and (max-width: 724px) {
+  .menu-desktop {
+    display: none;
+  }
 }

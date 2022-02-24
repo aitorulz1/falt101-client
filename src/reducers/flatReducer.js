@@ -5,6 +5,8 @@ import {
   COMENZAR_DESCARGA_FLAT,
   OBTENER_FLAT_EXITO,
   OBTENER_FLAT_ERROR,
+  ORDENAR_ALFA,
+  ORDENAR_PRICE,
 } from "../types";
 
 const initialState = {
@@ -40,6 +42,17 @@ export default function (state = initialState, action) {
         ...state,
         loading: false,
         flats: action.payload,
+      };
+    case ORDENAR_ALFA:
+      console.log(state.flats);
+      return {
+        ...state,
+        flats: [...state.flats.sort((a, b) => a.name.localeCompare(b.name))],
+      };
+    case ORDENAR_PRICE:
+      return {
+        ...state,
+        flats: [...state.flats.sort((c, d) => c.price - d.price)],
       };
     default:
       return state;

@@ -1,0 +1,20 @@
+.left-container {
+  width: 50%;
+  display: inline-flex;
+  border-bottom: 2px solid #f7f7f7;
+  border-right: 2px solid #f7f7f7;
+  padding: 2.5% 0;
+}
+
+.left-content {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+span.arrow {
+  font-size: 25px;
+  padding-left: 5px;
+  vertical-align: middle;
+}

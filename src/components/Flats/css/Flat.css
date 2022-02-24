@@ -2,13 +2,16 @@ ul.flat-container li {
   width: 20%;
   min-width: 250px;
   padding: 2%;
+  text-align: center;
   float: left;
 }
 
 .imag-cont {
+  position: relative;
   width: 100%;
   max-width: 250px;
   height: 250px;
+  display: inline-block;
 }
 
 .imag-cont img {
@@ -16,6 +19,21 @@ ul.flat-container li {
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+}
+
+.heart-container {
+  position: absolute;
+  background-color: #fff;
+  padding: 7.5px 4px 4px 7.5px;
+  border-radius: 30px;
+  top: 10px;
+  right: 10px;
+}
+
+.heart-container svg {
+  color: #000;
+  font-size: 20px;
+  margin-left: -5px;
 }
 
 .name {
@@ -31,4 +49,54 @@ ul.flat-container li {
   color: #8e8e8e;
   text-align: center;
   font-size: 15px;
+}
+
+button.heart {
+  border: none;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (max-width: 1192px) {
+  ul.flat-container li {
+    width: 29.3%;
+    padding: 2%;
+  }
+}
+
+@media screen and (max-width: 853px) {
+  ul.flat-container li {
+    width: 46%;
+    padding: 2%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  ul.flat-container li {
+    width: 20%;
+    min-width: 170px;
+    padding: 2%;
+    text-align: center;
+    float: left;
+  }
+
+  .imag-cont {
+    width: 100%;
+    max-width: 170px;
+    height: 170px;
+    display: inline-block;
+  }
+
+  ul.flat-container li {
+    width: 46%;
+    padding: 2%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  ul.flat-container li {
+    width: 96%;
+    padding: 2%;
+  }
 }

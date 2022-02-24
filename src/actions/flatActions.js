@@ -5,6 +5,8 @@ import {
   COMENZAR_DESCARGA_FLAT,
   OBTENER_FLAT_EXITO,
   OBTENER_FLAT_ERROR,
+  ORDENAR_ALFA,
+  ORDENAR_PRICE,
 } from "../types";
 
 import clienteAxios from "../service/axios";
@@ -67,4 +69,30 @@ const obtenerFlatsExito = (flats) => ({
 const obtenerFlatsError = () => ({
   type: OBTENER_FLAT_ERROR,
   payload: true,
+});
+
+// ----------- Ordenar Flats Alfa -----------
+
+export function ordenarFlatsAlfa() {
+  return (dispatch) => {
+    dispatch({
+      type: ORDENAR_ALFA,
+    });
+  };
+}
+
+// const ordenarFlatsByAlfa = () => ({
+//   type: ORDENAR_ALFA,
+// });
+
+// ----------- Ordenar Flats Price -----------
+
+export function ordenarFlatsPrice() {
+  return (dispatch) => {
+    dispatch(ordenarFlatsByPrice());
+  };
+}
+
+const ordenarFlatsByPrice = () => ({
+  type: ORDENAR_PRICE,
 });

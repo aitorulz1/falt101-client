@@ -1,9 +1,12 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect, Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { obtenerFlats } from "../../actions/flatActions";
 import Flat from "./Flat";
 import Nav from "../Layout/Header/Nav";
 import Bath from "../../assets/bath.jpg";
+import Panels from "../Panels/Panels";
+import Pagination from "../Layout/Footer/Paginations";
+
 import "./css/ObtenerFlats.css";
 
 export default function Flats() {
@@ -16,13 +19,14 @@ export default function Flats() {
 
   const flats = useSelector((state) => state.flats.flats);
 
-  console.log(flats.length);
+  const totalPages = flats.length / 4;
 
   const { id } = flats;
 
   return (
     <Fragment>
       <Nav />
+      <Panels />
       <div className="obtener-container">
         <div className="obtener-content">
           <ul className="flat-container">
@@ -35,6 +39,7 @@ export default function Flats() {
               flats.map((flat) => <Flat key={id} flat={flat} />)
             )}
           </ul>
+          {flats.length !== 0 ? <Pagination /> : null}
         </div>
       </div>
     </Fragment>

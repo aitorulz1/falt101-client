@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import "./css/Flat.css";
 
 export default function Flat({ flat }) {
@@ -6,10 +7,20 @@ export default function Flat({ flat }) {
 
   const nameSpecial = name.charAt(0).toUpperCase() + name.slice(1);
 
+  const [clicked, setClicked] = useState(false);
+  const heartClicked = () => {
+    setClicked(!clicked);
+  };
+
   return (
     <Fragment>
       <li>
         <div className="imag-cont">
+          <div className="heart-container">
+            <button className="heart" onClick={heartClicked}>
+              {!clicked ? <FaRegHeart /> : <FaHeart />}
+            </button>
+          </div>
           <img src={flatPicture} />
         </div>
         <div className="name">{nameSpecial}</div>

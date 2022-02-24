@@ -1,15 +1,19 @@
 .profile-container {
   width: 100px;
+  position: relative;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   justify-content: center;
   float: right;
-  border-left: 1px solid #f7f7f7;
+  border-left: 2px solid #f7f7f7;
 }
 
 .person {
-  padding-top: Calc(50% - 25px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .person svg {

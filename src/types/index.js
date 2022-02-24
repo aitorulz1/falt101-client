@@ -13,3 +13,6 @@ export const AGREGAR_USUARIO_ERROR = "AGREGAR_USUARIO_ERROR";
 export const LOGIN = "LOGIN";
 export const LOGIN_EXITO = "LOGIN_EXITO";
 export const LOGIN_ERROR = "LOGIN_ERROR";
+
+export const ORDENAR_ALFA = "ORDENAR_ALFA";
+export const ORDENAR_PRICE = "ORDENAR_PRICE";

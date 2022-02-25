@@ -1,6 +1,9 @@
 # Flat 101 APP 
-Rastreator es el mayor buscador de seguros y, en esta aplicación podrás encontrar los seguros de coches y préstamos catalogados por coberturas y ordenados de menor a mayor precio.
-Los préstamos están ordenados de menor a mayor a partir de los 10.000€.
+Flat101 es una app en la que podrá subir y visualizar productos. Los campos que puede registrar de producto son el nombre, precio e imagen. El proyecto se ha creado con un server en el que se ha definido el modelo, controlador y rutas para estructurar los datos y registrar así, cada producto en la base de datos.
+
+La parte front se ha realizado con Redux y los métodos para realizar las acciones y poder subir los productos, la estructura se organiza mediante "Actions" y "Reducers", declarando así los types que van a facilitar el buen funcionamiento de la aplicación.
+
+El diseño se ha realizado mediante hojas de estilo CSS. La instalación de SASS no ha sido posible por una incompatibilidad con la versión de React.
 
 
 # Primeros pasos
